@@ -22,14 +22,13 @@ very clever reason.
 **1a)** Given a $N$ dollars, state a greedy algorithm for producing
 as few coins as possible that sum to $N$. Please discuss if this algorithm is optimal or not.
 
-**enter answer in `answers.md`**
+The greedy algorithm is "largest denomination first", where we simply take as many coins of the largest denomination possible. Once we can no longer use a denomination, we drop to the next lower denomination. We repeat this until we make exact change. This is possibly since we have a coin denomination of 1.
 
 
 
 **1b)** What is the work and span of your algorithm?
 
-**enter answer in `answers.md`**
-
+This algorithm has work/span  𝑂(log𝑁) . This is because for each successively smaller coin we reduce  𝑁  by at least a factor of two, and the number of each coins of each denomination with one multiplication.
 
 ## Part 2: Making Change Again
 
@@ -46,8 +45,8 @@ possible?
   work in Fortuito. Give a simple counterexample that shows that the
   greedy algorithm does not produce the fewest number of coins. Please discuss why greedy algorithm cannot work optionally. 
   
-**enter answer in `answers.md`**
 
+Suppose we have coin denominations of  1,5,6  and we want to make change for  10 . The greedy algorithm would choose 1 coin of value  6  and 4 coins of value  1 , whereas the optimal solution has 2 coins of value  5 .
 
 
 **2b)** Use this optimal substructure property to design a
@@ -55,7 +54,7 @@ possible?
   or bottom-up memoization to avoid recomputing solutions to
   subproblems, what is the work and span of your approach?
 
-**enter answer in `answers.md`**
+For the work, notice that the number of distinct subproblems is  𝑁𝑘 , and each minimization on the right hand side requires  𝑂(1)  work. This results in an overall work and span of  𝑂(𝑁𝑘) .
 
 
 ## Part 3: Edit Distance
